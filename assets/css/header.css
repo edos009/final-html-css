@@ -1,7 +1,4 @@
-.header {
-}
-
-.header__inner {
+.header__top {
   height: 142px;
 
   border-radius: 7px;
@@ -16,14 +13,14 @@
   background-color: var(--light-green-color);
 }
 
-.header__inner::after{
-  content: '';
+.header__top::after {
+  content: "";
   position: absolute;
 
-  height: 1.5px;
+  height: 2px;
   width: 100%;
 
-  bottom: -14.5px;
+  bottom: -15px;
   left: 0;
 
   background-color: #c4c4c4;
@@ -112,8 +109,8 @@
   text-transform: uppercase;
 }
 
-.header__authorization::after{
-  content: '';
+.header__authorization::after {
+  content: "";
   position: absolute;
 
   width: 36px;
@@ -124,4 +121,121 @@
 
   background-image: url(./../icons/user.svg);
   background-repeat: no-repeat;
+}
+
+.menu {
+  display: flex;
+  /* justify-content: space-between; */
+
+  margin: 0 90px 0;
+}
+
+.menu__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.menu_item {
+  padding: 32px 0;
+
+  position: relative;
+}
+
+.menu_link {
+  display: block;
+
+  padding: 10px 22px;
+
+  position: relative;
+
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 32px;
+  text-transform: uppercase;
+}
+
+.arrow-down {
+  padding: 10px 31px 10px 22px;
+}
+
+.menu_item:hover {
+  color: var(--light-green-color);
+}
+
+.arrow-down:hover path {
+  fill: var(--light-green-color);
+}
+
+.menu_sublist {
+  display: none;
+  position: absolute;
+
+  left: 0;
+  top: auto;
+}
+
+.menu_subitem {
+  min-width: 400px;
+
+  padding: 11px 8px 3px;
+  margin-bottom: 1px;
+
+  background-color: var(--light-green-color);
+}
+
+.menu_subitem:first-child{
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.menu_subitem:last-child{
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.menu_sublink {
+
+  width: 100%;
+  color: var(--white-color);
+
+  font-weight: 200;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.menu_subitem .menu_sublist{
+  position: absolute;
+  top: 0;
+  left: 399px;
+}
+
+.menu_subitem .menu_subitem{
+  min-width: 500px;
+}
+
+.menu_item:hover > .menu_sublist{
+  display: block;
+}
+
+.menu_item:hover .menu_subitem:hover{
+  background-color: #60A861;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  margin-left: 65px;
+}
+
+.search {
+  display: block;
+
+  width: 34px;
+  height: 34px;
+
+  background-image: url(./../icons/loupe.svg);
+  background-position: center;
 }
