@@ -125,6 +125,7 @@
 
 .menu {
   display: flex;
+  align-items: center;
 
   margin: 0 90px 16px;
 }
@@ -155,26 +156,6 @@
   text-transform: uppercase;
 }
 
-.arrow-down::after {
-  content: "";
-  position: absolute;
-
-  height: 16px;
-  width: 25px;
-
-  top: 18px;
-  right: 0;
-
-  background-image: url(./../icons/arrow-down.svg);
-  background-repeat: no-repeat;
-}
-
-.arrow-down:hover::after {
-  background-image: url(./../icons/arrow-down-green.svg);
-
-  transition: all 0.5s ease;
-}
-
 .arrow-down {
   padding: 10px 31px 10px 22px;
 }
@@ -182,10 +163,10 @@
 .menu_item:hover {
   color: var(--light-green-color);
 
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
 }
 
-.arrow-down:hover path {
+.menu_item:hover .arrow-down path {
   fill: var(--light-green-color);
 }
 
@@ -259,21 +240,66 @@
 .menu_item:hover .menu_subitem:hover {
   background-color: #60a861;
 
-  transition: all .5s ease;
+  transition: all 0.2s ease;
 }
 
 .search-box {
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
+
+  position: relative;
+
+  cursor: pointer;
+
   margin-left: 65px;
 }
 
-.search {
-  display: block;
+.search-box:hover .search-input,
+.search-input:focus {
+  width: 256px;
+
+  color: var(--dark-grey-color);
+}
+
+.search-box:hover path {
+  fill: var(--light-green-color);
+}
+
+.search-input:focus + svg path {
+  fill: var(--light-green-color);
+}
+
+.search-input {
+  width: 55px;
+  height: 55px;
+
+  padding: 8px;
+
+  position: absolute;
+
+  border: none;
+  border-radius: 10px;
+
+  color: transparent;
+
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  transition: width 0.3s ease;
+  outline: none;
+
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 29px;
+}
+
+.search-loupe {
+  position: absolute;
 
   width: 34px;
   height: 34px;
 
-  background-image: url(./../icons/loupe.svg);
-  background-position: center;
+  top: 50%;
+  right: 9px;
+
+  transform: translateY(-50%);
 }
